@@ -1,6 +1,6 @@
 libaries needed:
 
--sounderpy, metpy, numpy, matplotlib, math
+sounderpy, metpy, numpy, matplotlib, math
 
 how to install:
 
