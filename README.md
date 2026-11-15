@@ -1,4 +1,4 @@
-# Plotting Component Winds Using Sounderpy
+# Plotting Vector Component Winds Using Sounderpy
 
 libaries needed:
 
