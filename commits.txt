@@ -1,5 +1,3 @@
-for me bc idk how to use github (ignore)
-
 how to commit changes using command line:
 
 git add your_script_name.py
