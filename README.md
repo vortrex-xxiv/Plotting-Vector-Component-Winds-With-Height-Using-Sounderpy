@@ -1,4 +1,4 @@
-# Plotting Vector Component Winds Using Sounderpy
+# Plotting Vector Component Winds With Height Using Sounderpy
 
 libaries needed:
 
