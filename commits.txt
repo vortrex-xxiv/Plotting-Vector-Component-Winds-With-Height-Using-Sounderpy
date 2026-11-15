@@ -1,0 +1,7 @@
+for me bc idk how to use github 
+
+git add your_script_name.py
+
+git commit -m "Add script from Codespace"
+
+git push
