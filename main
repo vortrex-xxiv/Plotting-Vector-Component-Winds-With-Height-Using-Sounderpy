@@ -1,0 +1,60 @@
+import sounderpy as spy
+import matplotlib.pyplot as plt
+import metpy
+import numpy as np
+import math
+from metpy.interpolate import interpolate_1d
+from metpy.units import units
+
+year  = int(input("Year: ")) 
+month = int(input("Month: "))
+day   = int(input("Day: "))
+hour  = int(input("Hour: "))
+station = input("Station: ")
+
+clean_data = spy.get_obs_data(station, year, month, day, hour)
+
+u_wind = clean_data['u'] #east/west 
+
+v_wind = clean_data['v'] #north/south
+
+height_data = clean_data['z']
+
+temperature_data = clean_data['T']
+
+dewpoint_data = clean_data['Td']
+
+pressure_data = clean_data['p']
+
+# 1. Create data using NumPy
+#Yes, NumPy lets you multiply values element-wise without writing explicit Python for loops by converting the lists into NumPy Arrays.
+#While NumPy still iterates over the data under the hood at the C level (vectorization), it avoids visible Python-level cycling
+#and runs significantly faster for large datasets.
+
+x = ((v_wind) * 1.15078)
+y = ((height_data) / 1000)
+
+title = ("Southerly Winds vs Height" + " " + str(year) + " " + str(month) + " " + str(day) + " " + str(hour) + "z " + station)
+xlabel = ("Southerly Wind Component (mph)")
+ylabel = ("Height (km)")
+
+# 2. Plot the data using Matplotlib
+plt.plot(x, y, color="red")
+plt.title(title)
+plt.xlabel(xlabel)
+plt.ylabel(ylabel)
+plt.show()
+
+x = ((u_wind) * 1.15078)
+y = ((height_data) / 1000)
+
+title = ("Westerly Winds vs Height" + " " + str(year) + " " + str(month) + " " + str(day) + " " + str(hour) + "z " + station)
+xlabel = ("Westerly Wind Component (mph)")
+ylabel = ("Height (km)")
+
+# 2. Plot the data using Matplotlib
+plt.plot(x, y, color="red")
+plt.title(title)
+plt.xlabel(xlabel)
+plt.ylabel(ylabel)
+plt.show()
